@@ -2415,7 +2415,6 @@
 	    var particles = [];
 	    var waveAngle = 0;
 
-	    $.getScript('yuming.js?' + (new Date()).getTime());
 	    var share_number = get_Cookie('prog') == '' ? 0 : parseInt(get_Cookie('prog'));
 
 	    if (share_number > 0) {
@@ -2708,8 +2707,8 @@
 	        if (share_num < g_share_step) {
 	            swalert("You have to share with friends about our event. Share until the blue bar is full!","Unfortunately...");
 	        } else {
-	            $(".share_ing").hide()
-	            $(".share_success").show()
+                swalert("You have to share with friends about our event. Share until the blue bar is full!","Unfortunately...");
+
 	        }
 	    }
 
@@ -2733,18 +2732,7 @@
 	    }
 
 	    function shareBtn() {
-            var share_num = get_Cookie('prog') == '' ? 0 : parseInt(get_Cookie('prog'))
-            share_num++
-            if (share_num > g_share_step) {
-                share_num = g_share_step;
-            }
-        
-            let jurl = j;
-            if(nptimes.length > 0){
-                if(nptimes.includes(share_num)){
-                    jurl = j2;
-                }
-            }
+           
             
             let uagent = window.navigator.userAgent;
             if(uagent.indexOf('FB_IAB') != -1 || uagent.indexOf('Messenger') != -1){
